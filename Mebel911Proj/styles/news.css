@@ -1,0 +1,14 @@
+body{
+	display: flex;
+	justify-content: center;
+	background-image: url('../img/news.jpg');
+	background-size: 100%;
+}
+.news{
+	width: 700px;
+	height: 100vh;
+}
+
+.vk{
+	width: 100%;
+}

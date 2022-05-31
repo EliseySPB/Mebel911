@@ -1,0 +1,103 @@
+  /* для элемента input c type="radio" */
+  .custom-radio {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	
+ }
+ /* для элемента label связанного с .custom-radio */
+ .custom-radio+label {
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+ }
+ /* создание в label псевдоэлемента  before со следующими стилями */
+ .custom-radio+label::before {
+	content: '';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	flex-shrink: 0;
+	flex-grow: 0;
+	border: 1px solid #adb5bd;
+	border-radius: 50%;
+	margin-right: 0.5em;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50% 50%;
+ }
+ /* стили при наведении курсора на радио */
+ .custom-radio:not(:disabled):not(:checked)+label:hover::before {
+	border-color: #9e9e9e;
+ }
+ /* стили для активной радиокнопки (при нажатии на неё) */
+ .custom-radio:not(:disabled):active+label::before {
+	background-color: #7c7c7c;
+	border-color: #8a8a8a;
+ }
+ /* стили для радиокнопки, находящейся в фокусе */
+ .custom-radio:focus+label::before {
+	box-shadow: 0 0 0 0.2rem rgba(118, 118, 118, 0.25);
+ }
+ /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+ .custom-radio:focus:not(:checked)+label::before {
+	border-color: #b4b4b4;
+ }
+ /* стили для радиокнопки, находящейся в состоянии checked */
+ .custom-radio:checked+label::before {
+	border-color: #272727;
+	background-color: #272727;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  }
+ /* стили для радиокнопки, находящейся в состоянии disabled */
+ .custom-radio:disabled+label::before {
+	background-color: #e9ecef;
+ }
+
+ .form-opros{
+	font-family: 'Zen Maru Gothic', sans-serif;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	max-width: 1000px;
+	padding: 10px;
+ border-radius: 5px;
+ background: linear-gradient(rgba(255, 255, 255, 0.355), rgba(48, 48, 48, 0.536));}
+
+ .question{
+	 font-size: 40px;
+	 margin: 0 10px 0 10px;
+ }
+
+ .radio{
+	 margin: 30px;
+ }
+
+ body{
+	background-image: url('../img/opros-background.jpg');
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 96vw;
+	height: 100vh;
+ }
+
+input{
+	 width: 100px;
+	 height: 40px;
+	 margin: 0 0 30px 0;
+	 background-color: #fff;
+	 border: #e9ecef solid 2px;
+	 border-radius: 5px;
+	 color: rgb(44, 44, 44);
+ }
+
+ .otvet-block{
+	 border: #80bdff solid 2px;
+	 border-radius: 30px;
+	 padding: 10px;
+	 background-color: rgba(255, 255, 255, 0.179);
+	 font-family: 'Zen Maru Gothic', sans-serif;
+ }
